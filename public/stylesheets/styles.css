@@ -4,6 +4,40 @@ body {
 }
 
 a {
-	font-size: 24px;
+	font-size: 20px;
+	text-decoration: none;
+}
 
+a:link {
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+a:hover {
+    color: black;
+}
+input[type=submit] {
+	background: none; 
+	border:0 none;
+	cursor:pointer;
+	font-size: 20px;
+}
+
+li {
+	list-style-position: inside;
+	font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+}
+
+h1 {
+font-family: "Brush Script MT", cursive;
+}
+
+h3 {
+font-family: "Brush Script MT", cursive;
+}
+
+h2 {
+	font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
 }

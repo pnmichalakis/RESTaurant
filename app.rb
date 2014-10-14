@@ -10,6 +10,8 @@ ActiveRecord::Base.establish_connection({
 
 require_relative 'models/food'
 require_relative 'models/party'
+require_relative 'models/order'
+
 
 get '/' do
 	redirect '/foods'
@@ -40,7 +42,7 @@ patch '/foods/:id' do
 	food = Food.find(params[:id])
 	new_name = params['food_name']
 	new_price = params['food_price']
-	food.update({name: new_name})
+	food.update({name: new_name, price: new_price})
 	redirect '/foods'
 end
 
