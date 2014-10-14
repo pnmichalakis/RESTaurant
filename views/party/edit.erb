@@ -1,0 +1,8 @@
+<form action="/parties/<%=@party.id%>" method="post">
+	<input type="hidden" name="_method" value="patch">
+	<input type="text" name="party_name" placeholder="<%=@party.name%>">
+	<input type="text" name="party_number" placeholder="<%=@party.number%>">
+	<input type="text" name="party_paid" placeholder="<%=@party.paid%>">
+	<input type="submit">
+
+</form>

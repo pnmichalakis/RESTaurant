@@ -1,0 +1,16 @@
+<h2> <%= @party.name%> ----- Table of: <%=@party.number%> ------ Has paid? <%=@party.paid%> </h2>
+
+<a href="/parties/<%=@party.id%>/edit">Change of plans?</a>
+
+<form action="/parties/<%=@party.id%>" method="post">
+	<input type="hidden" name="_method" value="delete">
+	<input type="submit" value="Cancellation">
+</form>
+
+
+<p>
+	<a href="/parties"> Back to list of tables</a>
+</p>
+<p>
+	<a href="/foods">Back to menu</a>
+</p>

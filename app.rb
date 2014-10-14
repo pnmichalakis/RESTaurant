@@ -17,7 +17,7 @@ end
 
 get '/foods' do
 	@foods = Food.all
-	erb :index
+	erb :'/food/index'
 end
 
 get '/foods/new' do
@@ -53,3 +53,52 @@ delete '/foods/:id' do
 	Food.delete(params[:id])
 	redirect '/foods'
 end
+
+
+
+###
+
+
+get '/parties' do
+	@parties = Party.all
+	erb :'/party/index'
+end
+
+get '/parties/new' do
+	erb :'party/new'
+end
+
+
+post '/parties' do
+	new_name = params['party_name']
+	new_number = params['party_number']
+	new_paid = params['party_paid']
+	Party.create({name: new_name, number: new_number, paid: new_paid})
+	redirect '/parties'
+end
+
+get '/parties/:id/edit' do
+@party = Party.find(params[:id])
+erb :'/party/edit'
+end
+
+patch '/parties/:id' do
+	party = Party.find(params[:id])
+	new_name = params['party_name']
+	new_number = params['party_number']
+	new_paid = params['party_paid']
+	party.update({name: new_name, number: new_number, paid: new_paid})
+	redirect '/parties'
+end
+
+get '/parties/:id' do
+	@party = Party.find(params[:id])
+	erb :'/party/show'
+end
+
+delete '/parties/:id' do
+	Party.delete(params[:id])
+	redirect '/parties'
+end
+
+
