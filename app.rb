@@ -115,6 +115,19 @@ post '/parties/:id/orders' do
 	redirect '/parties'
 end
 
+get '/parties/:id/orders' do
+	@party = Party.find(params[:id])
+	@foods = Food.all
+	@order = Order.find(params[:id])
+	erb :'/order/show'
+end
+
+
+delete 'parties/:id/orders/:id' do	
+	Order.delete(params[:order])
+	redirect '/parties'
+end
+
 
 
 

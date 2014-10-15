@@ -1,1 +1,8 @@
-show.erb
+<% @party.orders.each do |order| %>
+	<a href="/parties/<%=@party.id%>/orders"><%= order.food.name %> --------- $<%= order.food.price%></a>
+	<%end%>
+
+	<form action="/parties/<%=@party.id%>" method="post">
+	<input type="hidden" name="_method" value="delete">
+	<input type="submit" value="Cancellation">
+</form>

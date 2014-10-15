@@ -2,10 +2,14 @@
 <p>
 	<h3> Party's Current Order </h3>
 	<% @party.orders.each do |order| %>
-	<%= order.food.name %>
+	<a href="/parties/<%=@party.id%>/orders"><%= order.food.name %></a>
 	<%end%>
+	
+
 </p>
+
 <a href="/parties/<%=@party.id%>/edit">Change of plans?</a>
+
 
 <form action="/parties/<%=@party.id%>" method="post">
 	<input type="hidden" name="_method" value="delete">
@@ -35,8 +39,9 @@
 	<a href="/foods">Back to menu</a>
 </p>
 
-
-
+<!--<%@party.orders.each do |order| %>
+	<%= order.food.name %>
+	<%end%>
 
 <!-- <ul>
 	<%@foods.each do |food|%>
