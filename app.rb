@@ -95,6 +95,8 @@ end
 
 get '/parties/:id' do
 	@party = Party.find(params[:id])
+	@foods = Food.all
+	@order = Order.all
 	erb :'/party/show'
 end
 
@@ -103,73 +105,16 @@ delete '/parties/:id' do
 	redirect '/parties'
 end
 
-# get '/parties/:id/order' do
-# 	erb :'/order/index'
-# end
 
-# post '/orders' do
-# 	@party = Party.create(params[:party])
-# 	@food = Food.create(params[:food])
-# 	@order = Order.create({ party_id: @party.id, food_id: @food.id })
-
-# 	redirect "/orders/#{@order.id}"
-# end
-
-get '/parties/:id/order' do
-	@party = Party.find(params[:id])
-	@foods = Food.all
-	erb :'/order/new'
-end
-
-post '/parties/:id/order' do
-	food_id = Food.find(params[:id])
-	party_id = Party.find(params[:id])
-	party.food <<  food
+post '/parties/:id/orders' do
+	food = Food.where(name: params[:food_name])
+	party = Party.find(params[:id])
+	party.foods << food
+	Order.create(params[:food])
 	redirect '/parties'
 end
 
 
 
-# get '/orders' do
-# 	@orders = Order.all
-# 	erb :'order/index'
-# end
 
-# post '/orders' do
-# 	@party = Party.create(params[:party])
-# 	@food = Food.create(params[:food])
-# 	@order = Order.create({ party_id: @party.id, food_id: @food.id })
 
-# 	redirect "/orders/#{@order.id}"
-# end
-
-# get '/orders/:id' do
-# 	@order = Order.find(params[:id])
-# 	@order_food = @order.food
-# 	@order_party = @order.party
-
-# 	erb :'order/show'
-# end
-
-# get '/orders/:id/edit' do
-# 	@order = Order.find(params[:id])
-# 	@order_food = @order.food
-# 	@order_party = @order.party
-
-# 	erb :'order/edit'
-# end
-
-# patch '/orders/:id' do
-# 	@order = Order.find(params[:id])
-# 	@order.food
-# 	@order.party
-# 	@order.food.update(params[:food])
-# 	@order.party.update(params[:party])
-# 	@order.save
-# 	redirect "/orders/#{@order.id}"
-# end
-
-# delete '/orders/:id' do
-# 	Order.destroy(params[:id])
-# 	redirect '/'
-# end

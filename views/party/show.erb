@@ -1,5 +1,6 @@
 <h2> <%= @party.name%> ----- Table of: <%=@party.number%> ------ Has paid? <%=@party.paid%> </h2>
 
+
 <a href="/parties/<%=@party.id%>/edit">Change of plans?</a>
 
 <form action="/parties/<%=@party.id%>" method="post">
@@ -7,12 +8,39 @@
 	<input type="submit" value="Cancellation">
 </form>
 
-<p>
-	<a href="/parties/<%=@party.id%>/order">Add party's order</a>
-</p>
+<!-- <h2>Create order for <%=@party.name%></h2> -->
+<h2> Select Food </h2>
+
+	<%@foods.each do |food|%>
+			<form action="/parties/<%=@party.id%>/orders" method="post">
+		<button>				
+			<%=food.name%>
+	<%end%>
+		</button>
+</form>
+
+
+<!-- <p>
+	<a href="/parties/<%=@party.id%>/orders">Add party's order</a>
+</p> -->
 <p>
 	<a href="/parties"> Back to list of tables</a>
 </p>
 <p>
 	<a href="/foods">Back to menu</a>
 </p>
+
+
+
+
+<!-- <ul>
+	<%@foods.each do |food|%>
+		<li>
+			<form action="/parties/<%=@party.id%>" method="post">
+				<input type="checkbox" name="food[food_id][]" value="<%=food.id%>">
+				<%=food.name%>
+		</li>
+	<%end%>
+</ul>
+<input type="submit">
+</form> -->

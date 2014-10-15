@@ -4,7 +4,7 @@
 	<%@foods.each do |food|%>
 		<li>
 			<form action="/parties/<%=@party.id%>/order" method="post">
-				<input type="checkbox" name="vehicle" value="food">
+				<input type="checkbox" name="food[food_id][]" value="<%=food.id%>">
 				<%=food.name%>
 		</li>
 	<%end%>
