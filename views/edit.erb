@@ -1,0 +1,7 @@
+<form action="/foods/<%=@food.id%>" method="post">
+	<input type="hidden" name="_method" value="patch">
+	<input type="text" name="food_name" value="<%=@food.name%>">
+	<input type="text" name="food_price" value="<%=@food.price%>">
+	<input type="submit">
+
+</form>

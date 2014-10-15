@@ -1,5 +1,4 @@
-<form action="/orders" method ="post">
-	<input type="text" name="@party" placeholder="Party">
-	<input type="text" name="@food" placeholder="Item">
+<form action="/parties/<%=party.id%>/orders" method ="post">
+	<input type="text" name="food.name" placeholder="Item">
 	<input type="submit">
 </form>
