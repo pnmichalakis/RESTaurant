@@ -107,10 +107,11 @@ end
 
 
 post '/parties/:id/orders' do
-	food = Food.where(name: params[:food_name])
-	@party = Party.find(params[:id])
-	@party.foods << food
-	Order.create(params[party_id: @party.id])
+	# food = Food.where(name: params[:food_name])
+	# @party = Party.find(params[:id])
+	# @party.foods << food
+	Order.create(params[:order])
+
 	redirect '/parties'
 end
 

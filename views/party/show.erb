@@ -15,8 +15,8 @@
 
 	<%@foods.each do |food|%>
 			<form action="/parties/<%=@party.id%>/orders" method="post">
-			<input type="hidden" name="food_id" value="<%= food.id %>">
-			<input type="hidden" name="party_id" value="<%= @party.id %>">
+			<input type="hidden" name="order[food_id]" value="<%= food.id %>">
+			<input type="hidden" name="order[party_id]" value="<%= @party.id %>">
 				<button>				
 			<%=food.name%>
 				</button>
