@@ -1,6 +1,8 @@
 <h2> <%= @party.name%> ----- Table of: <%=@party.number%> ------ Has paid? <%=@party.paid%> </h2>
-
-
+<p>
+	<h3> Party's Current Order </h3>
+	<%=@order.food%>
+</p>
 <a href="/parties/<%=@party.id%>/edit">Change of plans?</a>
 
 <form action="/parties/<%=@party.id%>" method="post">
@@ -13,12 +15,13 @@
 
 	<%@foods.each do |food|%>
 			<form action="/parties/<%=@party.id%>/orders" method="post">
-		<button>				
+			<input type="hidden" name="food_id" value="<%= food.id %>">
+			<input type="hidden" name="party_id" value="<%= @party.id %>">
+				<button>				
 			<%=food.name%>
+				</button>
+			</form>
 	<%end%>
-		</button>
-</form>
-
 
 <!-- <p>
 	<a href="/parties/<%=@party.id%>/orders">Add party's order</a>

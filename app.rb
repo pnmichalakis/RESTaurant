@@ -96,7 +96,7 @@ end
 get '/parties/:id' do
 	@party = Party.find(params[:id])
 	@foods = Food.all
-	@order = Order.all
+	@order = Order.find(params[:id])
 	erb :'/party/show'
 end
 
@@ -108,11 +108,12 @@ end
 
 post '/parties/:id/orders' do
 	food = Food.where(name: params[:food_name])
-	party = Party.find(params[:id])
-	party.foods << food
-	Order.create(params[:food])
+	@party = Party.find(params[:id])
+	@party.foods << food
+	Order.create(params[party_id: @party.id])
 	redirect '/parties'
 end
+
 
 
 
