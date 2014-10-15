@@ -1,7 +1,9 @@
 <h2> <%= @party.name%> ----- Table of: <%=@party.number%> ------ Has paid? <%=@party.paid%> </h2>
 <p>
 	<h3> Party's Current Order </h3>
-	<%=@order.food%>
+	<% @party.orders.each do |order| %>
+	<%= order.food.name %>
+	<%end%>
 </p>
 <a href="/parties/<%=@party.id%>/edit">Change of plans?</a>
 
