@@ -108,7 +108,7 @@ end
 
 post '/parties/:id/orders' do
 	# food = Food.where(name: params[:food_name])
-	# @party = Party.find(params[:id])
+	#@party = Party.find(params[:id])
 	# @party.foods << food
 	Order.create(params[:order])
 
@@ -123,13 +123,17 @@ get '/parties/:id/orders' do
 end
 
 
-# delete 'parties/:id/orders/:id' do	
-# 	Order.delete(params[:order])
-# 	redirect '/parties'
-# end
+delete 'parties/:id/orders/' do	
+	Order.delete(params[:order])
+	redirect '/parties'
+end
 
-
-
+get '/parties/:id/orders/receipt' do
+	@party = Party.find(params[:id])
+	@foods = Food.all
+	# @order = Order.find(params[:order])
+	erb :'/order/receipt'
+end
 
 
 

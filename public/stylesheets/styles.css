@@ -1,11 +1,14 @@
 body {
 	background-color: bisque;
 	text-align: center;
-}
+	/*background-image: url("http://asset.zcache.com/assets/graphics/s.gif");*/
+/*	background-image: url("http://i.imgur.com/Vs8Qltv.jpg");
+*/}
 
 a {
 	font-size: 20px;
 	text-decoration: none;
+	font-family: Courier;
 }
 
 a:link {
@@ -40,4 +43,8 @@ font-family: "Brush Script MT", cursive;
 
 h2 {
 	font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+}
+
+table {
+	text-align: center;
 }

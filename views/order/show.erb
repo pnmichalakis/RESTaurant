@@ -3,5 +3,6 @@
 	<input type="hidden" name="_method" value="delete">
 	<input type="submit" value="<%= order.food.name %>  $<%= order.food.price %>">
 </form>
-
 <%end%>
+
+<a href="/parties/<%=@party.id%>/orders/receipt">Print Bill</a>

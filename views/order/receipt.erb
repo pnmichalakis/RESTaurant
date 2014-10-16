@@ -1,0 +1,18 @@
+
+<table style="width:30%">
+  <tr>
+   
+    <th>Item Ordered</th>
+    <th>Price</th> 
+    
+  </tr>
+   <% @party.orders.each do |order| %>
+  <tr>
+    <td><%= order.food.name %></td>
+    <td><%= order.food.price %></td> 
+    <%end%>
+  </tr>
+</table>
+ 
+
+
