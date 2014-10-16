@@ -17,18 +17,18 @@
 </form>
 
 <!-- <h2>Create order for <%=@party.name%></h2> -->
-<h2> Select Food </h2>
-
+<h2><u> Select Food </u></h2>
+<div class="partymenu">
 	<%@foods.each do |food|%>
 			<form action="/parties/<%=@party.id%>/orders" method="post">
 			<input type="hidden" name="order[food_id]" value="<%= food.id %>">
 			<input type="hidden" name="order[party_id]" value="<%= @party.id %>">
-				<button>				
+				<button class="button">				
 			<%=food.name%>
 				</button>
 			</form>
 	<%end%>
-
+</div>
 <!-- <p>
 	<a href="/parties/<%=@party.id%>/orders">Add party's order</a>
 </p> -->

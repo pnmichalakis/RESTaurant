@@ -137,5 +137,11 @@ get '/parties/:id/orders/receipt' do
 end
 
 
+patch '/parties/:id/orders/checkout' do
+	party = Party.find(params[:id])
+	new_paid = "Yes"
+	party.update({paid: new_paid})
+	redirect '/parties'
+end
 
 

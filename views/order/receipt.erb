@@ -52,3 +52,16 @@
   <span class="central"> 718-680-1321</span>
 
 </div>
+
+<form action="/parties/<%=@party.id%>/orders/checkout" method="post">
+  <input type="hidden" name="_method" value="patch">
+    <button class="button">        
+      CHECKOUT  
+    </button>
+</form>
+
+
+
+
+
+
