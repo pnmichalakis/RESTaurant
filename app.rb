@@ -131,6 +131,7 @@ end
 get '/parties/:id/orders/receipt' do
 	@party = Party.find(params[:id])
 	@foods = Food.all
+	@total = "This is where cost goes"
 	# @order = Order.find(params[:order])
 	erb :'/order/receipt'
 end

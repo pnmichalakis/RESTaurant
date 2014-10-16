@@ -1,18 +1,54 @@
-
-<table style="width:30%">
+<div class="receipt">
+  <table align="center" style="width:30%">
+  <caption class="caption"><u>Bill for <%=@party.name%></u></caption>
   <tr>
    
     <th>Item Ordered</th>
     <th>Price</th> 
     
   </tr>
+    <% total = 0 %>
    <% @party.orders.each do |order| %>
   <tr>
     <td><%= order.food.name %></td>
-    <td><%= order.food.price %></td> 
-    <%end%>
+    <td>$<%= order.food.price.to_f %></td> 
+    
   </tr>
-</table>
+    <%total += order.food.price%>
+     <%end%>
+    <tfoot>
+    <tr>
+      <td><b>Total</b></td>
+      <td>$<%= total.round(2)%></td>
+    </tr>
+
+  </tfoot>
+  </table>
+  <p></p>
+
+  <p></p>
+  <table align="center" style="width:30%">
+    <caption class="caption">Suggested Gratuity</caption>
+    <tr>
+      <td><b>15%</b></td>
+      <td><%=total * 15/100.to_f%></td>
+    </tr>
+    <tr>
+      <td><b>18%</b></td>
+      <td><%=total * 18/100.to_f%></td>
+    </tr>
+    <tr>
+      <td><b>20%</b></td>
+      <td><%=total * 20/100.to_f%></td>
+    </tr>
+
+  </table>
  
+  <span class="central"> Thank you for your patronage!</span>
+  <span class="central"> Please come again soon</span>
+  <span class="central"> BARRY'S BRUNCH BONANZA</span>
+  <span class="central"> 6801 8TH AVENUE</span>
+  <span class="central"> BROOKLYN, NY 11209</span>
+  <span class="central"> 718-680-1321</span>
 
-
+</div>
