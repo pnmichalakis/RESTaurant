@@ -29,8 +29,13 @@ end
 post '/foods' do
 	new_name = params['food_name']
 	new_price = params['food_price']
-	Food.create({name: new_name, price: new_price})
-	redirect '/foods'
+	food = Food.create({name: new_name, price: new_price})
+	if food.valid?
+		redirect '/foods'
+	else
+		@errors = food.errors.full_messages
+		erb :'food/new'
+	end
 end
 
 get '/foods/:id/edit' do
@@ -145,9 +150,9 @@ delete '/parties/:id/orders' do
 	redirect '/parties'
 end
 
-# delete '/orders/:id' do
-# 	Order.delete(params[:id])
-# 	redirect '/parties'
+# patch '/orders/:id'
+# 	Order.update(params[:id])
+# 	redirect '/parties/:id'
 # end
 
 # delete '/orders/:id' do

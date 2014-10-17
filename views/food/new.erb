@@ -3,3 +3,12 @@
 	Cost: <input type="text" name="food_price" placeholder="$10000">
 	<input type="submit">
 </form>
+
+<%@errors%>
+
+<h2><%=if @errors
+	"That item is already on the menu"
+	end%>
+</h2>
+
+<a href="/foods">Back to Menu</a>
