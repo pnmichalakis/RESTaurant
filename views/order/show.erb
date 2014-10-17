@@ -1,8 +1,14 @@
 <% @party.orders.each do |order| %>
-	<form action="/parties/<%=@party.id%>/orders" method="post">
+
+<h1><%= order.food.name %>  $<%= order.food.price %></h1>
+<form action="/parties/<%=@party.id%>/orders" method="post">
 	<input type="hidden" name="_method" value="delete">
-	<input type="submit" value="<%= order.food.name %>  $<%= order.food.price %>">
+	<input type="submit" name="order_id" value="remove order">
 </form>
+
+
 <%end%>
 
 <a href="/parties/<%=@party.id%>/orders/receipt">Print Bill</a>
+
+

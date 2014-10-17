@@ -1,9 +1,13 @@
 body {
-	background-color: bisque;
+	/*background-color: bisque;*/
 	text-align: center;
-	/*background-image: url("http://asset.zcache.com/assets/graphics/s.gif");*/
-/*	background-image: url("http://i.imgur.com/Vs8Qltv.jpg");
-*/}
+	background-image: url('http://i.imgur.com/ADiJkpJ.jpg');
+	background-size: cover;
+  /*background: -webkit-linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('http://i.imgur.com/QYGlSNl.jpg?2');
+  background: -moz-linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('http://i.imgur.com/QYGlSNl.jpg?2');
+  background: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('http://i.imgur.com/QYGlSNl.jpg?2');*/
+  color: black;
+}
 
 a {
 	font-size: 20px;
@@ -12,14 +16,14 @@ a {
 }
 
 a:link {
-    color: black;
+    color: blue;
 }
 
 a:visited {
-    color: black;
+    color: blue;
 }
 a:hover {
-    color: black;
+    color: blue;
 }
 input[type=submit] {
 	background: none; 
@@ -29,6 +33,7 @@ input[type=submit] {
 }
 
 li {
+	list-style: none;
 	list-style-position: inside;
 	font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
 }
@@ -61,26 +66,39 @@ table {
 
 .receipt {
 	padding: 10px;
-	background-color: white;
+	background-color: #EFECE5;
 	border: 2px solid black;
 	width: 400px;
 	margin:0 auto;
+	color: black;
 }
-.checkout {
+/*.checkout {
 	font-size: 36px;
 	text-align: center;
-}
+}*/
 
-.button {
+.checkout {
 	margin-top: 30px;
 	text-decoration: none;
-	background-color: bisque;
+	background: none;
 	cursor: pointer;
-	border: none;
-	font-size: 24px;
+	border: 2px darkgrey;
+	font-size: 34px;
 	font-family: Tahoma;
 }
 
-.partymenu {
+.partyfood {
 	margin-top: 2px;
+	text-decoration: none;
+	font-family: Papyrus, fantasy;
+	font-size: 24px;
+	border: none;
+	background: none;
+	color: black;
 }
+/*.currentorder {
+	border: 1px dashed grey;
+	width: 250px;
+	margin:0 auto;
+}*/
+

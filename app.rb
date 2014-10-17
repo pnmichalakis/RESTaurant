@@ -123,10 +123,6 @@ get '/parties/:id/orders' do
 end
 
 
-delete 'parties/:id/orders/' do	
-	Order.delete(params[:order])
-	redirect '/parties'
-end
 
 get '/parties/:id/orders/receipt' do
 	@party = Party.find(params[:id])
@@ -144,4 +140,18 @@ patch '/parties/:id/orders/checkout' do
 	redirect '/parties'
 end
 
+delete '/parties/:id/orders' do
+	Order.delete(params["order_id"])
+	redirect '/parties'
+end
+
+# delete '/orders/:id' do
+# 	Order.delete(params[:id])
+# 	redirect '/parties'
+# end
+
+# delete '/orders/:id' do
+# 	Order.delete(params[:id])
+# 	redirect '/parties'
+# end
 

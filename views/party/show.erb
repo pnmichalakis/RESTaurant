@@ -1,12 +1,10 @@
 <h2> <%= @party.name%> ----- Table of: <%=@party.number%> ------ Has paid? <%=@party.paid%> </h2>
-<p>
+<div class="currentorder">
 	<h3> Party's Current Order </h3>
 	<% @party.orders.each do |order| %>
-	<a href="/parties/<%=@party.id%>/orders"><%= order.food.name %></a>
+		<a href="/parties/<%=@party.id%>/orders"><p><%= order.food.name %></p></a>
 	<%end%>
-	
-
-</p>
+</div>
 
 <a href="/parties/<%=@party.id%>/edit">Change of plans?</a>
 
@@ -23,7 +21,7 @@
 			<form action="/parties/<%=@party.id%>/orders" method="post">
 			<input type="hidden" name="order[food_id]" value="<%= food.id %>">
 			<input type="hidden" name="order[party_id]" value="<%= @party.id %>">
-				<button class="button">				
+				<button class="partyfood">				
 			<%=food.name%>
 				</button>
 			</form>
