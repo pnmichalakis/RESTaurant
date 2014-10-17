@@ -1,29 +1,32 @@
 body {
 	/*background-color: bisque;*/
 	text-align: center;
-	background-image: url('http://i.imgur.com/ADiJkpJ.jpg');
+/*	background-image: url('http://i.imgur.com/ADiJkpJ.jpg');*/
+	background-image: url('http://images2.layoutsparks.com/1/169444/red-and-white-design.jpg');
 	background-size: cover;
   /*background: -webkit-linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('http://i.imgur.com/QYGlSNl.jpg?2');
   background: -moz-linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('http://i.imgur.com/QYGlSNl.jpg?2');
   background: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('http://i.imgur.com/QYGlSNl.jpg?2');*/
   color: black;
+	font-family:  Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
 }
 
 a {
 	font-size: 20px;
 	text-decoration: none;
-	font-family: Courier;
+	font-family:  Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+
 }
 
 a:link {
-    color: blue;
+    color: navy;
 }
 
 a:visited {
-    color: blue;
+    color: navy;
 }
 a:hover {
-    color: blue;
+    color: black;
 }
 input[type=submit] {
 	background: none; 
@@ -35,20 +38,24 @@ input[type=submit] {
 li {
 	list-style: none;
 	list-style-position: inside;
-	font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+	/*font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;*/
 }
 
-h1 {
+.restname {
 font-family: "Brush Script MT", cursive;
+}
+
+.ordername {
+	font-family:  Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
 }
 
 h3 {
 font-family: "Brush Script MT", cursive;
 }
 
-h2 {
+/*h2 {
 	font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
-}
+}*/
 
 table {
 	text-align: center;
@@ -90,7 +97,7 @@ table {
 .partyfood {
 	margin-top: 2px;
 	text-decoration: none;
-	font-family: Papyrus, fantasy;
+	font-family:  Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
 	font-size: 24px;
 	border: none;
 	background: none;
@@ -101,4 +108,9 @@ table {
 	width: 250px;
 	margin:0 auto;
 }*/
+
+.cancel {
+	font-family:  Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif; 
+}
+
 

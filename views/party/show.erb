@@ -1,6 +1,6 @@
 <h2> <%= @party.name%> ----- Table of: <%=@party.number%> ------ Has paid? <%=@party.paid%> </h2>
 <div class="currentorder">
-	<h3> Party's Current Order </h3>
+	<h2><u> Party's Current Order </u></h2>
 	<% @party.orders.each do |order| %>
 		<a href="/parties/<%=@party.id%>/orders"><p><%= order.food.name %></p></a>
 	<%end%>
@@ -9,7 +9,7 @@
 <a href="/parties/<%=@party.id%>/edit">Change of plans?</a>
 
 
-<form action="/parties/<%=@party.id%>" method="post">
+<form class="cancel" action="/parties/<%=@party.id%>" method="post">
 	<input type="hidden" name="_method" value="delete">
 	<input type="submit" value="Cancellation">
 </form>

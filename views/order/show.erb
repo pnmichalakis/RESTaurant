@@ -1,9 +1,9 @@
 <% @party.orders.each do |order| %>
 
-<h1><%= order.food.name %>  $<%= order.food.price %></h1>
+<h1 class="ordername"><%= order.food.name %>  $<%= order.food.price %></h1>
 <form action="/parties/<%=@party.id%>/orders" method="post">
 	<input type="hidden" name="_method" value="delete">
-	<input type="submit" name="order_id" value="remove order">
+	<input type="submit" name="order_id" value="Remove Item">
 </form>
 
 <!-- <form action="/parties/<%=@party.id%>/orders" method="patch">
