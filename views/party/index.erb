@@ -1,6 +1,5 @@
 <h2><u> Tonight's Guests </u></h3>
 
-
 <ul>
 	<%@parties.each do |party|%>
 		<li>
@@ -11,9 +10,7 @@
 	<%end%>
 </ul>
 
-<p>
-	<a href="/parties/new"> Add a new table </a>
-</p>
-<p>
-	<a href="/foods">Back to menu</a>
-</p>
+<h2><%=link_to("/parties/new", "Add new table")%></h2>
+
+<h2><%=link_to("/foods", "Back to Menu")%></h2>
+

@@ -1,3 +1,5 @@
+<%if false%>
+
 <form action="/foods/<%=@food.id%>" method="post">
 	<input type="hidden" name="_method" value="patch">
 	<input type="text" name="food_name" placeholder="<%=@food.name%>">
@@ -5,3 +7,9 @@
 	<input type="submit">
 
 </form>
+
+<%end%>
+
+
+ <%= form_open(@food, method: 'patch') %>
+ <%= erb(:'foods/_form', :locals => {food: @food}) %>

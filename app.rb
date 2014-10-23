@@ -11,7 +11,22 @@ ActiveRecord::Base.establish_connection({
 require_relative 'models/food'
 require_relative 'models/party'
 require_relative 'models/order'
+require_relative 'helpers/link_helper'
+require_relative 'helpers/form_helper'
+helpers ActiveSupport::Inflector
+# helpers do
+# 	def say_hello(name)
+# 		"Hello #{name}"
+# 	end
 
+# 	def link_to(url, body)
+# 		"<a href='#{url}'>#{body}</a>"
+# 	end
+# end
+
+get '/console' do
+	binding.pry
+end
 
 get '/' do
 	redirect '/foods'
