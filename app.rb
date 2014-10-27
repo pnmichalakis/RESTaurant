@@ -8,12 +8,15 @@ ActiveRecord::Base.establish_connection({
 	})
 
 
-require_relative 'models/food'
-require_relative 'models/party'
-require_relative 'models/order'
-require_relative 'helpers/link_helper'
-require_relative 'helpers/form_helper'
+require './models/food'
+require './models/party'
+require './models/order'
+require './helpers/link_helper'
+require './helpers/form_helper'
+require './helpers/application_helper.rb'
 helpers ActiveSupport::Inflector
+
+enable :sessions
 # helpers do
 # 	def say_hello(name)
 # 		"Hello #{name}"
@@ -175,3 +178,38 @@ end
 # 	redirect '/parties'
 # end
 
+get '/users/new' do
+  erb :'users/new'
+end
+
+post '/users' do
+  user = User.new(params[:user])
+  user.password = params[:password]
+  user.save!
+  redirect '/'  # Normally we would direct to the show page
+end
+
+
+
+
+get '/login' do
+  erb :'sessions/login'
+end
+
+post '/sessions' do
+  redirect '/' unless user = User.find_by({username: params[:username]})
+  if user.password == params[:password]
+    session[:current_user] = user.id
+    redirect '/' # May redirect to... show
+  else
+    redirect '/' # May redirect to log-in
+  end
+
+  # What is weird in the above code? ^^^^^^ ************************************
+
+end
+
+delete '/sessions' do
+  session[:current_user] = nil
+  redirect '/'
+end
