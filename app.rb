@@ -11,6 +11,7 @@ ActiveRecord::Base.establish_connection({
 require './models/food'
 require './models/party'
 require './models/order'
+require './models/user'
 require './helpers/link_helper'
 require './helpers/form_helper'
 require './helpers/application_helper.rb'
@@ -41,6 +42,7 @@ get '/foods' do
 end
 
 get '/foods/new' do
+	authenticate!
 	erb :'/food/new'
 end
 
@@ -57,6 +59,7 @@ post '/foods' do
 end
 
 get '/foods/:id/edit' do
+authenticate!
 @food = Food.find(params[:id])
 erb :'/food/edit'
 end
@@ -148,6 +151,7 @@ end
 
 
 get '/parties/:id/orders/receipt' do
+	authenticate!
 	@party = Party.find(params[:id])
 	@foods = Food.all
 	@total = "This is where cost goes"
@@ -192,8 +196,8 @@ end
 
 
 
-get '/login' do
-  erb :'sessions/login'
+get '/sessions/new' do
+  erb :'sessions/new'
 end
 
 post '/sessions' do
@@ -204,10 +208,13 @@ post '/sessions' do
   else
     redirect '/' # May redirect to log-in
   end
-
-  # What is weird in the above code? ^^^^^^ ************************************
-
 end
+
+get '/sessions/new' do
+  erb :'sessions/login'
+end
+
+# end
 
 delete '/sessions' do
   session[:current_user] = nil

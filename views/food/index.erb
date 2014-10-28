@@ -16,6 +16,8 @@
 	<%end%>
 </ul>
 
+<% if session[:current_user] %>
 <p>
 	<a href="/foods/new"> Add Item to Menu </a>
 </p>
+<%end%>

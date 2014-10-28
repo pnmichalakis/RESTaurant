@@ -8,6 +8,22 @@
 <body>
 	<a href="/"><h1 class="restname"><u> Welcome to Barry's! </u></h1></a>
 	<h2 class="epigraph"> Where it's always brunch, and brunch is bottomless! </h2>
+
+	
+<% if session[:current_user] %>
+    <form action="/sessions" method='post'>
+      <input type="hidden" name='_method' value='delete'>
+      <input type="submit" value='Log-Out'>
+    </form>
+   
+
+  <% else %>
+    <a href="/users/new">Register</a>
+    <p></p>
+    <a href="/sessions/new">Log-In</a>
+  <% end %>
+	
+
 	<%=yield%>
 </body>
 </html>
