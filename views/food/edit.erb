@@ -1,4 +1,4 @@
-<%if false%>
+
 
 <form action="/foods/<%=@food.id%>" method="post">
 	<input type="hidden" name="_method" value="patch">
@@ -8,8 +8,6 @@
 
 </form>
 
-<%end%>
 
 
- <%= form_open(@food, method: 'patch') %>
- <%= erb(:'foods/_form', :locals => {food: @food}) %>
+
