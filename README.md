@@ -1,4 +1,4 @@
-RESTaurant, by Peter N. Michalakis 
+# RESTaurant, by Peter N. Michalakis 
 
 WHAT IS THIS?
 ------------------------------------------------
